@@ -1,0 +1,277 @@
+/* Pokedex image */
+#pokedeximage {
+  position: relative;
+  width: 150px;
+  top: 20px;
+}
+
+#pokedeximage2 {
+  position: relative;
+  width: 150px;
+  top: 20px;
+}
+
+/* Header */
+#header1 {
+  font-family: "Pokemon Solid", sans-serif;
+  color: rgb(224, 33, 16);
+  font-size: 60px;
+  text-shadow: 2px 2px #100909;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.button {
+  font-family: "Pokemon Solid", sans-serif;
+  background-color: red;
+  font-size: 30px;
+  text-align: center;
+  padding: 15px 32px;
+  border-radius: 6px;
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 300px;
+  height: 100px;
+}
+.button:hover {
+  color: white;
+}
+
+#pokemonheadercontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pokemonheader {
+  width: auto;
+  height: 100px;
+}
+
+#headertext {
+  font-family: "Pokemon Solid", sans-serif;
+}
+
+/*Cards*/
+#parentDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+.card {
+  background-color: #ff8888;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.list-group-item {
+  font-size: 16px;
+  padding: 5px;
+}
+.list-group-item-one,
+.list-group-item-two,
+.list-group-item-three {
+  list-style-type: none;
+}
+
+/*Modal */
+.modal-dialog {
+  width: 700px;
+  margin: auto;
+  font-family: "Monospace";
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.modal-dialog strong {
+  width: 100%;
+  margin: auto;
+  font-family: "Monospace";
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.modal-dialog h5 {
+  width: 100%;
+  margin: auto;
+  font-family: "Monospace";
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.modal-dialog .height {
+  margin: auto;
+  font-family: "Monospace";
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.modal-dialog .weight {
+  margin: auto;
+  font-family: "Monospace";
+  font-weight: 500;
+  font-size: 40px;
+}
+
+/* Scroll bar */
+
+#parentDiv::-webkit-scrollbar {
+  width: 10px;
+}
+
+#parentDiv::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
+}
+
+#parentDiv::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #fd8383;
+}
+
+/*background */
+
+body {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("images/background.jpg");
+  animation: bgScroll 30s linear infinite;
+}
+
+@keyframes bgScroll {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -1080px 0px;
+  }
+}
+
+/* Animated pokeball landing page */
+.pokeballcontainer {
+  margin-top: 60px;
+}
+
+.pokeball {
+  box-sizing: border-box;
+  --pokeball-size: 250px;
+  --pokeball-inner-size: 80px;
+  --pokeball-border-size: 10px;
+
+  --before-diameter: var(--pokeball-inner-size);
+  --after-diameter: calc(
+    var(--before-diameter) - (var(--pokeball-border-size) * 3)
+  );
+
+  border: var(--pokeball-border-size) solid #262122;
+  width: var(--pokeball-size);
+  height: var(--pokeball-size);
+  border-radius: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  background: linear-gradient(
+    150deg,
+    #ba0c2f 0%,
+    #ba0c2f 44%,
+    #262122 44%,
+    #262122 56%,
+    #fff 56%,
+    #fff 100%
+  );
+}
+
+.pokeball:before,
+.pokeball:after {
+  content: " ";
+  border-radius: 100%;
+  display: block;
+  position: absolute;
+}
+
+.pokeball:before {
+  width: var(--before-diameter);
+  height: var(--before-diameter);
+  top: calc(50% - var(--before-diameter) / 2);
+  left: calc(50% - var(--before-diameter) / 2);
+  background: #262122;
+}
+
+.pokeball:after {
+  width: var(--after-diameter);
+  height: var(--after-diameter);
+
+  top: calc(
+    50% -
+      (
+        ((var(--before-diameter) - (var(--pokeball-border-size) * 3)) / 2) +
+          var(--pokeball-border-size)
+      )
+  );
+  left: calc(
+    50% -
+      (
+        ((var(--before-diameter) - (var(--pokeball-border-size) * 3)) / 2) +
+          var(--pokeball-border-size)
+      )
+  );
+
+  background: #fff;
+  border: double var(--pokeball-border-size) #262122;
+}
+
+.pokeball-animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-name: shake;
+}
+
+@keyframes shake {
+  from {
+    transform: none;
+  }
+
+  20% {
+    transform: translate3d(-20%, 0, 0) rotate3d(0, 0, 1, -10deg);
+  }
+
+  40% {
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 5deg);
+  }
+
+  50% {
+    transform: translate3d(-10%, 0, 0) rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 5deg);
+  }
+
+  to {
+    transform: none;
+  }
+}
