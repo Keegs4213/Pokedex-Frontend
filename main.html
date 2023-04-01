@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex</title>
+       <!--Bootstrap + CSS stylesheet-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!--Google font-->
+    <style>
+      @import url("https://fonts.cdnfonts.com/css/pokemon-solid");
+    </style>
+  </head>
+  
+  <body onload="playAudio()" onclick="playAudio()">
+    <audio id="gamecorner" repeat autoplay src="gamecorner.mp3"></audio>
+    
+    <!-- Header-->
+    <div id="pokemonheadercontainer">
+<img id="pokedeximage2" src="images/pokedex.png" alt="pokedex">
+      <img id="pokemonheader" src="images/pokemon.png" alt="pokemonheader" />
+      <h1 id="header1">Pokédex</h1>
+   <img id="pokedeximage" src="images/pokedex.png" alt="pokedex"> </div> 
+    <div class="jumbotron">
+      <div class="container text-center">
+        <p id="headertext">Gotta catch 'em all!</p>
+      </div>
+    </div>
+      <div class="scrolling.bg"></div>
+    <!-- Search bar-->
+ <div class = "container" id="nav-container">
+      <div class="row align-items-center">
+        <div class="col">
+          <nav>
+            <span class="iconify" data-icon="material-symbols:search"></span>
+            <input type="text" class="Iconify" id="search" placeholder="Search..." data-icon="material-symbols:search">
+          </div>
+        </nav>
+        
+<!-- Type selector-->
+            <div class="col-2">
+                  <div class="form-group">
+                      <label for="category">Select a type:</label>
+                      <select class="form-control" id="category">
+                        <option value="all">All</option>
+                        <option value="grass">Grass</option>
+                        <option value="fire">Fire</option>
+                        <option value="water">Water</option>
+                        <option value="poison">Poison</option>
+                        <option value="normal">Normal</option>
+                        <option value="bug">Bug</option>
+                        <option value="flying">Flying</option>
+                        <option value="ghost">Ghost</option>
+                        <option value="ice">Ice</option>
+                        <option value="electric">Electric</option>
+                        <option value="ground">Ground</option>
+                        <option value="fighting">Fighting</option>
+                        <option value="fairy">Fairy</option>
+                        <option value="psychic">Psychic</option>
+                        <option value="rock">Rock</option>
+                        <option value="steel">Steel</option>
+                      </select>
+                  </div>
+              </div>
+      </div>
+
+      
+    <div id="parentDiv" class="row">
+      <div class ="scrollbar" id="scrollbar1">
+      <!-- Cards will go here -->
+    </div>
+  </div>
+  
+<!-- Card template-->
+    <template id="card-template">
+      <div class="card" style="width: 18rem"> <!-- data-bs-toggle="modal" data-bs-target="#pokemonModal" -->
+        <img src="..." class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Name</h5>
+          <p class="card-text">
+            <strong>Height:</strong> <span class="height">__HEIGHT__</span><br />
+            <strong>Weight:</strong> <span class="weight">__WEIGHT__</span><br />
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item-one"><strong>ID:</strong> __POKEMON_ID__</li>
+          <li class="list-group-item-two"><strong>Type(s):</strong> __POKEMON_TYPES__</li>
+          <li class="list-group-item-three"><strong>Moves:</strong> __POKEMON_MOVES__</li>
+        </ul>
+      </div>
+    </template>
+  <!-- Modal-->
+  <div class="modal fade" id="pokemonModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="card" style="width: 100%">
+          <img src="..." class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Name</h5>
+            <p class="card-text">
+              <strong>Height:</strong> <span class="height">__HEIGHT__</span><br />
+              <strong>Weight:</strong> <span class="weight">__WEIGHT__</span><br />
+            </p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item-one"><strong>ID:</strong><span class="id">__POKEMON_ID__</span></li>
+            <li class="list-group-item-two"><strong>Type(s):</strong> <span class="types">__POKEMON_TYPES__</span></li>
+            <li class="list-group-item-three"><strong>Moves:</strong> <span class="moves">__POKEMON_MOVES__</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+  function playAudio() {
+      var audio = document.getElementById("gamecorner");
+      audio.play();
+      audio.volume = 0.005;
+  }
+    </script>
+   <script src="script.js"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+  </body>
+</html>
