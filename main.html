@@ -119,9 +119,11 @@
   </div>
 <script>
   var audio = document.getElementById("gamecorner")
-  audio.volume = 0.005
-  function playAudio() { 
+  audio.volume = 0.0
+  function playAudio() {
+      var audio = document.getElementById("gamecorner");
       audio.play();
+      audio.volume = 0.005;
   }
     </script>
    <script src="script.js"></script>
